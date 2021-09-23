@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel="icon" href="{% static 'favicon.png' %}">
+    {% block css %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endblock css %}
+
+    {% block js %}
+    <!-- FontAwesome JS-->
+    <script src="{% static 'js/font_awesome.js' %}"></script>
+    {% endblock js %}
+    <title>Projects Dhunia</title>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    {% block header %}
+    <header id="navbar" class="fixed-top">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a href="{% url 'home' %}" class="navbar-brand">
+          <img src="{% static 'favicon.png' %}" alt="" class="img-thumbnail" width='50px' height=50px>
+        </a>
+        <button class="navbar-toggler" type='button' data-toggle='collapse' data-target='#navbarContent' aria-controls="#navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id='navbarContent'>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id='projectDropdown' role='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded='false'>
+                Projects
+              </a>
+              <div class="dropdown-menu" aria-labelledby="projectDropdown">
+                {% for tech in technologies %}
+                  <a href="" class="dropdown-item nav-link">{{tech.name}}</a>
+                {% endfor %}
+              </div> 
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"><strong>Register</strong></a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"><strong>Login</strong></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {% endblock header %}
+    <!-- ======= End of Header ======= -->
+    <section id='first'>
+    <div>
+      {% for tech in technologies %}
+        <a href="" class="dropdown-item nav-link">{{tech.name}}</a>
+      {% endfor %}
+    </div> 
+    <div>
+      {% for tech in technologies %}
+        <a href="" class="dropdown-item nav-link">{{tech.name}}</a>
+      {% endfor %}
+    </div> 
+    <div>
+      {% for tech in technologies %}
+        <a href="" class="dropdown-item nav-link">{{tech.name}}</a>
+      {% endfor %}
+    </div> 
+  </section>
+    <!-- ======= Content ======= -->
+    {% block content %}
+    
+    {% endblock content %}
+    <!-- ======= Content ======= -->
+    {% block footer %}
+    <footer id="footer">
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h4>Join Our Newsletter</h4>
+              <p>Subscribe for the latest products</p>  
+            </div>
+            <div class="col-lg-12">
+              <div class="d-flex justify-content-center align-items-center">
+              <form action="" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                  <input type="text col-lg-12" class='form-control-lg border-warning rounded' name="email" id='emailSubscribe'>
+                  <div class="input-group-append col-lg-12">
+                    <input type="submit" class='form-control-lg btn-dark text-light ml-1' value="subscribe">
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-top py-4">
+        <div class="container">
+          <div class="row pt-3">
+            <div class="col-lg-3 col-md-6 footer">
+              <h3><strong>Projects Dhunia</strong></h3>
+              <p>
+                A-12 Gandhi Street<br>
+                Madanapalle, Chittoor<br>
+                Andhra Pradesh, India<br>
+                Pincode - 517192 <br><br>
+                <strong>Phone:</strong> +91 9666213412<br>
+                <strong>Email:</strong> gr.charanreddy@gmail.com<br>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class='mr-1'><strong>></strong></i> <a href="#">Home</a></li>
+                <li><i class='mr-1'><strong>></strong></i> <a href="#">About Us</a></li>
+                <li><i class='mr-1'><strong>></strong></i> <a href="#">Services</a></li>
+                <li><i class='mr-1'><strong>></strong></i> <a href="#">Terms of service</a></li>
+                <li><i class='mr-1'><strong>></strong></i> <a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="mr-1"><strong>></strong></i> <a href="#">Web Design</a></li>
+                <li><i class="mr-1"><strong>></strong></i> <a href="#">Web Development</a></li>
+                <li><i class="mr-1"><strong>></strong></i> <a href="#">Product Management</a></li>
+                <li><i class="mr-1"><strong>></strong></i> <a href="#">Marketing</a></li>
+                <li><i class="mr-1"><strong>></strong></i> <a href="#">Graphic Design</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-social-links">
+              <h4>Our Social Networks</h4>
+              <p>Please follow our social networks, to get updated to our products</p>
+              <ul>
+                <a href="#" class="twitter"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                <a href="#" class='facebook'><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                <a href="#" class='instagram'><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                <a href="#" class='google-plus'><i class="fa fa-skype fa-2x" aria-hidden="true"></i></a>
+                <a href="#" class='linkedin'><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-sm-6 col-lg-6 text-center pb-2">
+              <div class="copyright">
+                &copy; Copyright <strong><span>Projects Dhunia</span></strong>. All Rights Reserved
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 text-center">
+              <div class="credits ml-auto">
+                Designed by <a href="https://www.linkedin.com/in/charanreddytechgeek/">Charan Reddy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    {% endblock footer %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'bootstrap/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'bootstrap/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+  </body>
+</html>
